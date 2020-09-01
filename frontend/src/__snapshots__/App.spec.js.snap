@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot renders 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="container-lg"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-6"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="form-label"
+          >
+            Text
+          </label>
+          <input
+            className="form-control"
+            name="text"
+            onChange={[Function]}
+            placeholder="Text"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Submit
+        </button>
+      </div>
+      <div
+        className="col-6"
+      >
+        <h2>
+          Words
+        </h2>
+        <ul />
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,8 @@
+{
+  "testRegex": "((\\.|/*.)(spec))\\.js?$",
+  "jest":{
+        "moduleNameMapper":{
+             "\\.(css|less|scss|sass)$": "identity-obj-proxy" 
+        }
+   }
+}

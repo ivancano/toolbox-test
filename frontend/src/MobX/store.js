@@ -1,18 +1,37 @@
-import { observable, action } from 'mobx';
+import {observable, action, computed, decorate} from 'mobx';
 import Service from '../services/services.js';
 
 
 class Store {
 
-	@observable results = [];
+	words = [];
 
-	@action sendText(text) {
-		Service.sendText(this.state.text).then((res) => {
-	      this.results.push(res.data);
-	    });
+	get getText() {
+        return this.words;
+    }
+
+    setText(text) {
+    	this.words.push(text);
+    }
+
+	async sendText(text) {
+		const res = await Service.sendText(text);
+		if(!res.error){
+			this.words.push(text);
+		}
 	}
 
 }
 
+decorate(Store, {
+	words: observable,
+	getText: computed,
+    sendText: action,
+    setText: action
+});
+
 const store = new Store();
 export default store;
+export {
+	Store
+}

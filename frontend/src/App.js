@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Row, Col, Container, Form, Button } from 'react-bootstrap';
-import { observer, inject } from 'mobx-react';
-import './App.scss';
+import {inject, observer, Provider} from "mobx-react";
+import {toJS} from "mobx";
+//import './App.scss';
 
-@inject('store')
-@observer
 class App extends React.Component {
 
   constructor(props) {
@@ -14,6 +12,7 @@ class App extends React.Component {
       text: '',
       results: []
     }
+
   }
 
   sendText = async () => {
@@ -42,9 +41,12 @@ class App extends React.Component {
                 
               </Col>
               <Col xs={6}>
-                {this.state.results.map(r => 
-                  <p>{r}</p>
+                <h2>Words</h2>
+                <ul>
+                {toJS(this.props.store.getText).map(r => 
+                  <li>{r}</li>
                  )}
+                </ul>
               </Col>
             </Row>
           </Container>
@@ -53,4 +55,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default inject('store')(observer(App));
