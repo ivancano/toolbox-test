@@ -23,5 +23,5 @@
 
 ### TESTING
 1) npm test
-
+Note: before running test, comment line 5 (import './App.scss';) from App.js
 

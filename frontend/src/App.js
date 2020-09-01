@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Container, Form, Button } from 'react-bootstrap';
 import {inject, observer, Provider} from "mobx-react";
 import {toJS} from "mobx";
-//import './App.scss';
+import './App.scss';
 
 class App extends React.Component {
 
